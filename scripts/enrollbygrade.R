@@ -17,7 +17,8 @@ library(janitor)
 library(readxl)
 
 #
-enrollbygradefolder = list.files("./raw_data/EnrollmentbyGrade_District", full.names = T)
+enrollbygradefolder = list.files("./raw_data/EnrollmentandStudentIndicators/EnrollmentbyGrade_District", full.names = T)
+
 #
 enrollbygradedata = lapply(enrollbygradefolder, function(i) {
   x=read_excel(i,

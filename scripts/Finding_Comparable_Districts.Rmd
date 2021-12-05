@@ -1,0 +1,32 @@
+---
+title: "Finding Districts Comparable to HPS" 
+author: "Chris Wenz"
+date: "12/4/2021"
+output: 
+  html_document:
+    theme: flatly
+    highlight: pygments
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What characteristics define HPS? 
+#### Size of the district
+
+#### Percentage of Latin*x* students
+
+#### Percentage of Emergent bilingual students
+
+#### Percentage of economically disadvantaged students
+
+#### Percentage of students on an IEP
+
+
+## Techniques for identifying like districts
+
+#### 1. *k* nearest-neighbor
+
+#### 2. Finite mixture models 
+
