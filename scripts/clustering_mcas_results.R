@@ -28,7 +28,7 @@ districts <- left_join(d, gradesoff)%>%
 
 
 imp <- districts %>%
-  select(District, DisCode, 
+  select(District, DisCode, n_pergrade,
          ell_per, ecodis_per, swd_per,
          
          black_per, hispanic_per, asian_per, white_per)
@@ -39,7 +39,7 @@ imp <- districts %>%
 
 
 impnor <- imp %>%
-  mutate(across(ell_per:white_per, nor))
+  mutate(across(n_pergrade:white_per, nor))
 
 
 
@@ -50,7 +50,7 @@ impnor <- imp %>%
 
 library(FNN)
 
-neighbors <- get.knn(data=impnor[,3:9], k=10, algorithm = "cover_tree")
+neighbors <- get.knn(data=impnor[,3:10], k=10, algorithm = "kd_tree")
 knn10 <- as.data.frame(neighbors$nn.index)
 
 # knnx.index(imp[,5:10], imp[,5:10], k=11, algorithm="CR")

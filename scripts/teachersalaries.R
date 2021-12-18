@@ -58,14 +58,14 @@ rm(salariesNames, salariesall, salariesbind, salariesdata, salariesfolder)
 write.csv(teachersalary, "output/teachersalary.csv", row.names=F)
 
 
-ggplot(data=subset(teachersalary, district=="Holyoke"),
-       aes(x=year, y=avg_salary))+
-  geom_line()
+# ggplot(data=subset(teachersalary, district=="Holyoke"),
+#        aes(x=year, y=avg_salary))+
+#   geom_line()
 
-CWUR0100SA0
+inflate_var <- c("CWUR0100SA0")
 
 
-inflate1 <- bls_api("CWUR0100SA0",
+inflate1 <- bls_api(inflate_var,
               startyear = 1997, endyear = 2017, registrationKey=bls_key)%>%
   dateCast()%>%
   select(-footnotes)
