@@ -91,7 +91,8 @@ teachersalaryadj <- left_join(teachersalary, avginflate)%>%
   )
            
            
-write.csv(teachersalaryadj, "output/teachersalaryadj.csv", row.names=F)          
+write.csv(teachersalaryadj, "output/teachersalaryadj.csv", row.names=F)
+gs4_create(name="salaryadjust", sheets=teachersalaryadj)
 
 ggplot(data=subset(teachersalaryadj, (district=="Holyoke" |
                                       district=="Easthampton"|

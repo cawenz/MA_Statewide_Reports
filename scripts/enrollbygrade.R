@@ -99,8 +99,8 @@ enrollbygrade <- left_join(ebg, justgoodnames)%>%
   mutate(year=(as.numeric(year)))%>%
   arrange(year)
 
-rm(ebg, enrollbygradedata, enrollbygradefolder, 
-   enrollgradeall, fixnames, enrollgradebind, justgoodnames)
+# rm(ebg, enrollbygradedata, enrollbygradefolder, 
+#    enrollgradeall, fixnames, enrollgradebind, justgoodnames)
 
 write.csv(enrollbygrade, "output/enrollbygrade.csv", row.names=F)
 
